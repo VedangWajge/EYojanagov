@@ -19,7 +19,7 @@ const SchemeForm = () => {
     email,
   };
   const response = await axios.post(
-    "http://localhost:5000/api/sendemail",
+    "https://eyojanagov.onrender.com/api/sendemail",
     data
   );
   console.log(response.data);
@@ -45,7 +45,7 @@ const SchemeForm = () => {
   useEffect(() => {
     const fetchUserId = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/${email}`);
+        const response = await axios.get(`https://eyojanagov.onrender.com/api/auth/${email}`);
         if (response.data.user_id) {
           setFormData((prevData) => ({
             ...prevData,
@@ -89,7 +89,7 @@ const SchemeForm = () => {
 
   const checkExistingApplication = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/schemes/check", {
+      const res = await axios.post("https://eyojanagov.onrender.com/api/schemes/check", {
         email: formData.email,
         schemename: formData.schemename,
         documents: formData.documents,
@@ -124,7 +124,7 @@ const SchemeForm = () => {
 
     try {
       if (isExisting) {
-        const res = await axios.patch("http://localhost:5000/api/schemes/update", data, {
+        const res = await axios.patch("https://eyojanagov.onrender.com/api/schemes/update", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -132,7 +132,7 @@ const SchemeForm = () => {
         console.log("Response:", res.data);
         setSuccess("Application updated successfully!"); 
       } else {
-        const res = await axios.post("http://localhost:5000/api/schemes", data, {
+        const res = await axios.post("https://eyojanagov.onrender.com/api/schemes", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
