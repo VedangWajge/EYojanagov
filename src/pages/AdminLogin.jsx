@@ -19,7 +19,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch("https://eyojanagov.onrender.com/api/auth/login", {
+      const response = await fetch("https://eyojanagov.onrender.com/api/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
