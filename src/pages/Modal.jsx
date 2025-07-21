@@ -12,7 +12,7 @@ const Modal = ({ application, onClose }) => {
   useEffect(() => {
     const fetchUserDetails = async (email) => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/email`, {
+        const response = await axios.get(`https://eyojanagov.onrender.com/api/auth/email`, {
           params: { email }, 
         });
         console.log('User details:', response.data);
@@ -35,7 +35,7 @@ const Modal = ({ application, onClose }) => {
         data.revertMessage = revertMessage; 
       }
       await axios.patch(
-        `http://localhost:5000/api/schemes/update-status/${application.email}/${application.schemename}`,
+        `https://eyojanagov.onrender.com/api/schemes/update-status/${application.email}/${application.schemename}`,
         data
       );
 
@@ -104,7 +104,7 @@ const Modal = ({ application, onClose }) => {
             <li key={doc.document_name}>
               <p>{doc.document_name}</p>
               <img
-                src={`http://localhost:5000/api/schemes/${application._id}/documents/${doc.document_name}`}
+                src={`https://eyojanagov.onrender.com/api/schemes/${application._id}/documents/${doc.document_name}`}
                 alt={doc.document_name}
                 style={{ width: '200px', height: 'auto', cursor: 'pointer' }}
                 onClick={() => handleDocumentClick(doc.document_name)} 
@@ -141,7 +141,7 @@ const Modal = ({ application, onClose }) => {
           <div className="document-viewer-content" onClick={e => e.stopPropagation()}>
             <h3>{selectedDoc}</h3>
             <img
-              src={`http://localhost:5000/api/schemes/${application._id}/documents/${selectedDoc}`}
+              src={`https://eyojanagov.onrender.com/api/schemes/${application._id}/documents/${selectedDoc}`}
               alt={selectedDoc}
               style={{ maxWidth: '90%', maxHeight: '90%' }}
             />

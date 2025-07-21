@@ -40,7 +40,7 @@ const EditForm = () => {
         e.preventDefault();
         try {
             // Submit the updated data to the backend
-            await axios.patch(`http://localhost:5000/api/schemes/${_id}`, {
+            await axios.patch(`https://eyojanagov.onrender.com/api/schemes/${_id}`, {
                 user_email: userEmail,
                 documents: documentList,
             });
@@ -66,7 +66,7 @@ const EditForm = () => {
                             {documentList.map((doc, index) => (
                                 <li key={index}>
                                     <img
-                                        src={`http://localhost:5000/api/schemes/${_id}/documents/${doc.document_name}`}
+                                        src={`https://eyojanagov.onrender.com/api/schemes/${_id}/documents/${doc.document_name}`}
                                         alt={doc.document_name}
                                         style={{ width: '200px', height: 'auto', cursor: 'pointer' }}
                                     />

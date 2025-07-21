@@ -11,7 +11,7 @@ const AppliedSchemes = () => {
   useEffect(() => {
     const fetchPendingApplications = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/schemes');
+        const response = await axios.get('https://eyojanagov.onrender.com/api/schemes');
         const pending = response.data.filter(app => app.status === 'pending'); // Filter for pending schemes
         setPendingApplications(pending);
       } catch (error) {

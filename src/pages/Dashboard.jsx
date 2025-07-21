@@ -28,15 +28,15 @@ const Dashboard = () => {
 
     const fetchData = async () => {
       try {
-        const userResponse = await axios.get('http://localhost:5000/api/statistics/users/count');
+        const userResponse = await axios.get('https://eyojanagov.onrender.com/api/statistics/users/count');
         setUserCount(userResponse.data.userCount);
 
         // Fetch schemes without filtering
-        const schemeResponse = await axios.get('http://localhost:5000/api/statistics/schemes/count');
+        const schemeResponse = await axios.get('https://eyojanagov.onrender.com/api/statistics/schemes/count');
         setSchemeData(schemeResponse.data); // Store all scheme data for charts
 
         // Fetch users for filtering
-        const usersResponse = await axios.get('http://localhost:5000/api/statistics/users');
+        const usersResponse = await axios.get('https://eyojanagov.onrender.com/api/statistics/users');
         setUsers(usersResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -57,7 +57,7 @@ const Dashboard = () => {
         params.status = selectedStatus; // Set status if a status is selected
       }
 
-      const response = await axios.get('http://localhost:5000/api/statistics/filterscheme', { params });
+      const response = await axios.get('https://eyojanagov.onrender.com/api/statistics/filterscheme', { params });
       console.log("API Response sduohsodho:", response.data); // Log the response to check its structure
       setfilteredSchemes(response.data); // Store the full filtered scheme data
 

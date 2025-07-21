@@ -30,7 +30,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/auth/profile/${loggedInUserEmail}`); // Adjust the API endpoint as per your backend
+        const response = await fetch(`https://eyojanagov.onrender.com/api/auth/profile/${loggedInUserEmail}`); // Adjust the API endpoint as per your backend
         const data = await response.json();
         
         if (response.ok) {
@@ -57,7 +57,7 @@ const Profile = () => {
     if (editMode) {
       // Save the updated data to the backend
       try {
-        const response = await fetch(`http://localhost:5000/api/auth/update/${loggedInUserEmail}`, {
+        const response = await fetch(`https://eyojanagov.onrender.com/api/auth/update/${loggedInUserEmail}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

@@ -27,7 +27,7 @@ const UserSchemes = () => {
         const fetchSchemes = async () => {
             if (email) {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/schemes/${email}`);
+                    const response = await axios.get(`https://eyojanagov.onrender.com/api/schemes/${email}`);
                     setSchemes(response.data);
                     setFilteredSchemes(response.data); // Initialize filtered schemes
                 } catch (error) {
@@ -81,7 +81,7 @@ const UserSchemes = () => {
 
     // const handleEdit = async (schemeId) => {
     //     try {
-    //       const response = await axios.get(`http://localhost:5000/api/schemes/${schemeId}`);
+    //       const response = await axios.get(`https://eyojanagov.onrender.com/api/schemes/${schemeId}`);
     //       const schemeData = response.data;
     //       navigate("/edit-form", { state: { schemeData } });
     //     } catch (err) {
@@ -124,7 +124,7 @@ const UserSchemes = () => {
                                     <li key={doc.document_name}>
                                     <p>{doc.document_name}</p>
                                     <img
-                                        src={`http://localhost:5000/api/schemes/${scheme._id}/documents/${doc.document_name}`}
+                                        src={`https://eyojanagov.onrender.com/api/schemes/${scheme._id}/documents/${doc.document_name}`}
                                         alt={doc.document_name}
                                         style={{ width: '200px', height: 'auto', cursor: 'pointer' }}
                                         onClick={() => handleDocumentClick(doc.document_name)} 

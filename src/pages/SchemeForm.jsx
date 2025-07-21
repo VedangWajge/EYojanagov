@@ -19,7 +19,7 @@ const SchemeForm = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     const data = { email };
-    const response = await axios.post("http://localhost:5000/api/sendemail", data);
+    const response = await axios.post("https://eyojanagov.onrender.com/api/sendemail", data);
     console.log(response.data);
   };
 
@@ -44,7 +44,7 @@ const SchemeForm = () => {
   useEffect(() => {
     const fetchUserId = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/${email}`);
+        const response = await axios.get(`https://eyojanagov.onrender.com/api/auth/${email}`);
         if (response.data.user_id) {
           setFormData((prevData) => ({
             ...prevData,
@@ -67,7 +67,7 @@ const SchemeForm = () => {
     // Call checkExistingApplication when component mounts
     const checkExistingApplication = async () => {
       try {
-        const res = await axios.post("http://localhost:5000/api/schemes/check", {
+        const res = await axios.post("https://eyojanagov.onrender.com/api/schemes/check", {
           email: formData.email,
           schemename: formData.schemename,
           documents: formData.documents,
@@ -126,7 +126,7 @@ const SchemeForm = () => {
     try {
       if (isExistingApplication) {
         // If the application already exists, send a PATCH request to update it
-        const res = await axios.patch(`http://localhost:5000/api/schemes/update/${formData.user_id}`, data, {
+        const res = await axios.patch(`https://eyojanagov.onrender.com/api/schemes/update/${formData.user_id}`, data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -135,7 +135,7 @@ const SchemeForm = () => {
         setSuccess("Application updated successfully!"); 
       } else {
         // If the application doesn't exist, send a POST request to submit a new application
-        const res = await axios.post("http://localhost:5000/api/schemes", data, {
+        const res = await axios.post("https://eyojanagov.onrender.com/api/schemes", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -190,7 +190,7 @@ const SchemeForm = () => {
             <li key={doc.document_name}>
               <p>{doc.document_name}</p>
               <img
-                src={`http://localhost:5000/api/schemes/${_id}/documents/${doc.document_name}`}
+                src={`https://eyojanagov.onrender.com/api/schemes/${_id}/documents/${doc.document_name}`}
                 alt={doc.document_name}
                 style={{ width: '200px', height: 'auto', cursor: 'pointer' }}
               />

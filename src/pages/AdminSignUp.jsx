@@ -22,7 +22,7 @@ const AdminSignUp = () => {
 
     // Implement sign-up logic for admins, such as an API call
     try {
-      const response = await fetch("http://localhost:5000/api/admin/createadmin", { // Use your backend port
+      const response = await fetch("https://eyojanagov.onrender.com/api/admin/createadmin", { // Use your backend port
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const RevertedSchemes = () => {
   useEffect(() => {
     const fetchRevertedApplications = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/schemes');
+        const response = await axios.get('https://eyojanagov.onrender.com/api/schemes');
         const reverted = response.data.filter(app => app.status === 'reverted'); // Filter for reverted schemes
         setRevertedApplications(reverted);
       } catch (error) {

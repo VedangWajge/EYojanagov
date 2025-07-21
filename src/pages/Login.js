@@ -29,8 +29,8 @@ const Login = () => {
 
     const loginUrl =
       role === "admin"
-        ? "http://localhost:5000/api/admin/login"
-        : "http://localhost:5000/api/auth/login";
+        ? "https://eyojanagov.onrender.com/api/admin/login"
+        : "https://eyojanagov.onrender.com/api/auth/login";
 
     try {
       const response = await fetch(loginUrl, {

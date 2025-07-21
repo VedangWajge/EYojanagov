@@ -11,7 +11,7 @@ const ApprovedSchemes = () => {
   useEffect(() => {
     const fetchApprovedApplications = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/schemes');
+        const response = await axios.get('https://eyojanagov.onrender.com/api/schemes');
         const approved = response.data.filter(app => app.status === 'approved'); // Filter for approved schemes
         setApprovedApplications(approved);
       } catch (error) {
